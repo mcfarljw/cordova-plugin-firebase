@@ -20,6 +20,7 @@
   <platform name="android">
 
     <dependency id="com-jernung-plugin-google-services" url="https://github.com/mcfarljw/cordova-plugin-google-services" />
+    <dependency id="com-jernung-plugin-promise" url="https://github.com/mcfarljw/cordova-plugin-promise" />
 
     <config-file target="config.xml" parent="/*">
       <feature name="FirebasePlugin" >
