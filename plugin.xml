@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com-jernung-plugins-firebase"
+        version="0.1.0">
+
+  <name>Firebase Plugin</name>
+  <description>A Cordova plugin for Firebase.</description>
+  <author>Jernung, LLC</author>
+  <license>MIT</license>
+  <keywords>cordova,firebase</keywords>
+
+  <engines>
+    <engine name="cordova" version=">=6.0.0" />
+  </engines>
+
+  <js-module src="www/firebase.js" name="FirebasePlugin">
+    <clobbers target="plugins.firebase" />
+  </js-module>
+
+  <platform name="android">
+
+    <dependency id="cordova-plugin-google-services" url="https://github.com/mcfarljw/cordova-plugin-google-services" />
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="FirebasePlugin" >
+        <param name="android-package" value="com.jernung.plugins.firebase.FirebasePlugin" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="com.jernung.plugins.firebase.PluginInstanceIdService" android:exported="true">
+        <intent-filter>
+          <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+        </intent-filter>
+      </service>
+    </config-file>
+
+    <framework src="com.google.android.gms:play-services-base:10.2.0" />
+
+    <source-file src="src/android/FirebasePlugin.java" target-dir="src/com/jernung/plugins/firebase" />
+    <source-file src="src/android/PluginInstanceIdService.java" target-dir="src/com/jernung/plugins/firebase" />
+    <source-file src="src/android/PluginUtils.java" target-dir="src/com/jernung/plugins/firebase" />
+
+  </platform>
+
+</plugin>
