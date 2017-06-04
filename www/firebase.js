@@ -1,16 +1,16 @@
 var exec = require('cordova/exec');
 
 module.exports = {
-  getId: function(callback) {
+  getId: function () {
     return new Promise(
-      function(resolve, reject) {
+      function (resolve, reject) {
         exec(resolve, reject, 'FirebasePlugin', 'getId', []);
       }
     );
   },
-  getToken: function(callback) {
+  getToken: function () {
     return new Promise(
-      function(resolve, reject) {
+      function (resolve, reject) {
         exec(resolve, reject, 'FirebasePlugin', 'getToken', []);
       }
     );
