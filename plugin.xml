@@ -41,7 +41,7 @@
       </service>
     </config-file>
 
-    <framework src="com.google.android.gms:play-services-base:10.2.6" />
+    <framework src="com.google.android.gms:play-services-base:11.0.0" />
 
     <source-file src="src/android/FirebasePlugin.java" target-dir="src/com/jernung/plugins/firebase" />
     <source-file src="src/android/PluginInstanceIdService.java" target-dir="src/com/jernung/plugins/firebase" />
