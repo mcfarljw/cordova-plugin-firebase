@@ -62,7 +62,7 @@
     <header-file src="src/ios/FirebasePlugin.h" />
     <source-file src="src/ios/FirebasePlugin.m" />
 
-    <header-file src="src/ios/Firebase/Firebase.h" />
+    <header-file src="src/ios/Firebase.h" />
 
     <framework src="src/ios/framework/FirebaseAnalytics.framework" custom="true" />
 		<framework src="src/ios/framework/FirebaseCore.framework" custom="true" />
