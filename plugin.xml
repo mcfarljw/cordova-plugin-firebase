@@ -31,6 +31,7 @@
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.WAKE_LOCK" />
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
@@ -40,6 +41,8 @@
         </intent-filter>
       </service>
     </config-file>
+
+    <framework src="com.google.firebase:firebase-core:11.6.0" />
 
     <source-file src="src/android/FirebasePlugin.java" target-dir="src/com/jernung/plugins/firebase" />
     <source-file src="src/android/PluginInstanceIdService.java" target-dir="src/com/jernung/plugins/firebase" />
