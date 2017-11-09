@@ -9,13 +9,15 @@
     "url": "https://github.com/mcfarljw/cordova-plugin-firebase"
   },
   "keywords": [
+    "analytics",
     "cordova",
     "firebase"
   ],
   "cordova": {
     "id": "cordova-plugin-firebase",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
