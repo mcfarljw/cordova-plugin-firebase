@@ -62,16 +62,16 @@
     <header-file src="src/ios/FirebasePlugin.h" />
     <source-file src="src/ios/FirebasePlugin.m" />
 
-    <header-file src="src/ios/Firebase.h" />
+    <header-file src="src/ios/Firebase/Firebase.h" />
 
     <framework src="libsqlite3.tbd" />
-    <framework src="src/ios/framework/FirebaseAnalytics.framework" custom="true" />
-		<framework src="src/ios/framework/FirebaseCore.framework" custom="true" />
-		<framework src="src/ios/framework/FirebaseCoreDiagnostics.framework" custom="true" />
-		<framework src="src/ios/framework/FirebaseInstanceID.framework" custom="true" />
-		<framework src="src/ios/framework/FirebaseNanoPB.framework" custom="true" />
-		<framework src="src/ios/framework/GoogleToolboxForMac.framework" custom="true" />
-    <framework src="src/ios/framework/nanopb.framework" custom="true" />
+    <framework src="src/ios/Firebase/FirebaseAnalytics.framework" custom="true" />
+		<framework src="src/ios/Firebase/FirebaseCore.framework" custom="true" />
+		<framework src="src/ios/Firebase/FirebaseCoreDiagnostics.framework" custom="true" />
+		<framework src="src/ios/Firebase/FirebaseInstanceID.framework" custom="true" />
+		<framework src="src/ios/Firebase/FirebaseNanoPB.framework" custom="true" />
+		<framework src="src/ios/Firebase/GoogleToolboxForMac.framework" custom="true" />
+    <framework src="src/ios/Firebase/nanopb.framework" custom="true" />
 
   </platform>
 
