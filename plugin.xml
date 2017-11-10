@@ -13,14 +13,15 @@
     <engine name="cordova" version=">=6.0.0" />
   </engines>
 
+  <dependency id="com-jernung-plugin-promise" url="https://github.com/mcfarljw/cordova-plugin-promise" />
+
   <js-module src="www/firebase.js" name="FirebasePlugin">
     <clobbers target="plugins.firebase" />
   </js-module>
 
   <platform name="android">
 
-    <dependency id="com-jernung-plugin-google-services" url="https://github.com/mcfarljw/cordova-plugin-google-services" />
-    <dependency id="com-jernung-plugin-promise" url="https://github.com/mcfarljw/cordova-plugin-promise" />
+    <hook type="after_prepare" src="hooks/android.js" />
 
     <config-file target="config.xml" parent="/*">
       <feature name="FirebasePlugin" >
@@ -52,6 +53,8 @@
 
   <platform name="ios">
 
+    <hook type="before_prepare" src="hooks/ios.js" />
+
     <config-file target="config.xml" parent="/*">
 			<feature name="FirebasePlugin">
 				<param name="ios-package" value="FirebasePlugin" />
@@ -59,11 +62,13 @@
 			</feature>
 		</config-file>
 
+    <resource-file src="src/ios/GoogleService-Info.plist" />
+
+    <header-file src="src/ios/Firebase/Firebase.h" />
     <header-file src="src/ios/FirebasePlugin.h" />
     <source-file src="src/ios/FirebasePlugin.m" />
 
-    <header-file src="src/ios/Firebase/Firebase.h" />
-
+    <framework src="libz.tbd" />
     <framework src="libsqlite3.tbd" />
     <framework src="src/ios/Firebase/FirebaseAnalytics.framework" custom="true" />
 		<framework src="src/ios/Firebase/FirebaseCore.framework" custom="true" />
