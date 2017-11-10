@@ -19,5 +19,8 @@
       "android",
       "ios"
     ]
+  },
+  "dependencies": {
+    "fs-extra": "4.0.x"
   }
 }
