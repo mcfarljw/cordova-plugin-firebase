@@ -5,7 +5,7 @@
 
   <name>Firebase Plugin</name>
   <description>A Cordova plugin for Firebase.</description>
-  <author>Jernung, LLC</author>
+  <author>Joshua McFarland</author>
   <license>MIT</license>
   <keywords>cordova,firebase</keywords>
 
@@ -13,11 +13,11 @@
     <engine name="cordova" version=">=6.0.0" />
   </engines>
 
-  <dependency id="com-jernung-plugin-promise" url="https://github.com/mcfarljw/cordova-plugin-promise" />
-
   <js-module src="www/firebase.js" name="FirebasePlugin">
     <clobbers target="plugins.firebase" />
   </js-module>
+
+  <dependency id="com-jernung-plugin-promise" url="https://github.com/mcfarljw/cordova-plugin-promise" />
 
   <platform name="android">
 
