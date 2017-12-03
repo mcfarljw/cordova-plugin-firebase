@@ -9,7 +9,6 @@
 - (void)pluginInitialize
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishLaunching:) name:UIApplicationDidFinishLaunchingNotification object:nil];
-
 }
 
 - (void)finishLaunching:(NSNotification *)notification
@@ -21,8 +20,7 @@
 {
     CDVPluginResult* pluginResult = nil;
 
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:
-                    [[FIRInstanceID instanceID] token]];
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[[FIRInstanceID instanceID] token]];
 
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
@@ -31,8 +29,7 @@
 {
     CDVPluginResult* pluginResult = nil;
 
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:
-                    [[FIRInstanceID instanceID] token]];
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[[FIRInstanceID instanceID] token]];
 
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
