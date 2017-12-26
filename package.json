@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-firebase",
   "version": "0.1.0",
-  "description": "A Cordova plugin for Firebase.",
+  "description": "An essential Cordova plugin for Firebase.",
   "author": "Joshua McFarland",
   "license": "MIT",
   "repository": {
@@ -9,6 +9,7 @@
     "url": "https://github.com/mcfarljw/cordova-plugin-firebase"
   },
   "keywords": [
+    "admob",
     "analytics",
     "cordova",
     "firebase"
@@ -21,6 +22,6 @@
     ]
   },
   "dependencies": {
-    "fs-extra": "4.0.x"
+    "fs-extra": "5.0.x"
   }
 }
