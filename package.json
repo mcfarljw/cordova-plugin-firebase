@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-firebase-basic",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A basic Cordova plugin for Firebase.",
   "author": "Joshua McFarland",
   "license": "MIT",
