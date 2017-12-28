@@ -17,9 +17,9 @@
     <clobbers target="plugins.firebase" />
   </js-module>
 
-  <dependency id="com-jernung-plugin-promise" url="https://github.com/mcfarljw/cordova-plugin-promise" />
   <dependency id="cordova-plugin-add-swift-support" version="1.7.1"/>
   <dependency id="cordova-plugin-google-services" version="1.0.0" />
+  <dependency id="cordova-plugin-promise" version="1.0.0" />
 
   <platform name="android">
 
