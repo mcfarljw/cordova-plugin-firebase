@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-firebase-basic",
   "version": "1.0.0",
-  "description": "An essential Cordova plugin for Firebase.",
+  "description": "A basic Cordova plugin for Firebase.",
   "author": "Joshua McFarland",
   "license": "MIT",
   "repository": {
