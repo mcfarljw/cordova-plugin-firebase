@@ -1,12 +1,12 @@
 {
-  "name": "cordova-plugin-firebase",
-  "version": "0.1.0",
+  "name": "cordova-plugin-firebase-basic",
+  "version": "1.0.0",
   "description": "An essential Cordova plugin for Firebase.",
   "author": "Joshua McFarland",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mcfarljw/cordova-plugin-firebase"
+    "url": "https://github.com/mcfarljw/cordova-plugin-firebase-basic"
   },
   "keywords": [
     "admob",
@@ -15,7 +15,7 @@
     "firebase"
   ],
   "cordova": {
-    "id": "cordova-plugin-firebase",
+    "id": "cordova-plugin-firebase-basic",
     "platforms": [
       "android",
       "ios"

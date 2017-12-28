@@ -1,3 +1,3 @@
 # Cordova Firebase Plugin
 
-An essential Cordova plugin for Firebase.
+A basic Cordova plugin for Firebase.

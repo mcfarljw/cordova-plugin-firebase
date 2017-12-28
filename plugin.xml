@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com-jernung-plugin-firebase"
-        version="0.1.0">
+        id="cordova-plugin-firebase-basic"
+        version="1.0.0">
 
   <name>Firebase Plugin</name>
-  <description>A Cordova plugin for Firebase.</description>
+  <description>A basic Cordova plugin for Firebase.</description>
   <author>Joshua McFarland</author>
   <license>MIT</license>
-  <keywords>cordova,firebase</keywords>
+  <keywords>cordova,firebase,admob,analytics,messaging</keywords>
 
   <engines>
     <engine name="cordova" version=">=6.0.0" />
@@ -18,10 +18,10 @@
   </js-module>
 
   <dependency id="com-jernung-plugin-promise" url="https://github.com/mcfarljw/cordova-plugin-promise" />
+  <dependency id="cordova-plugin-add-swift-support" version="1.7.1"/>
+  <dependency id="cordova-plugin-google-services" version="1.0.0" />
 
   <platform name="android">
-
-    <hook type="after_prepare" src="hooks/android.js" />
 
     <config-file target="config.xml" parent="/*">
       <feature name="FirebasePlugin" >
@@ -41,19 +41,25 @@
           <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
         </intent-filter>
       </service>
+      <service android:name="com.jernung.plugins.firebase.PluginMessagingService">
+        <intent-filter>
+          <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+        </intent-filter>
+      </service>
     </config-file>
 
+    <framework src="com.google.firebase:firebase-ads:11.8.0" />
     <framework src="com.google.firebase:firebase-core:11.8.0" />
+    <framework src="com.google.firebase:firebase-messaging:11.8.0" />
 
     <source-file src="src/android/FirebasePlugin.java" target-dir="src/com/jernung/plugins/firebase" />
     <source-file src="src/android/PluginInstanceIdService.java" target-dir="src/com/jernung/plugins/firebase" />
+    <source-file src="src/android/PluginMessagingService.java" target-dir="src/com/jernung/plugins/firebase/messaging" />
     <source-file src="src/android/PluginUtils.java" target-dir="src/com/jernung/plugins/firebase" />
 
   </platform>
 
   <platform name="ios">
-
-    <hook type="before_prepare" src="hooks/ios.js" />
 
     <config-file target="config.xml" parent="/*">
 			<feature name="FirebasePlugin">
@@ -62,14 +68,17 @@
 			</feature>
 		</config-file>
 
-    <resource-file src="src/ios/GoogleService-Info.plist" target="Resources/GoogleService-Info.plist" />
-
     <header-file src="libs/ios/Firebase/Firebase.h" />
-    <header-file src="src/ios/FirebasePlugin.h" />
-    <source-file src="src/ios/FirebasePlugin.m" />
+    <source-file src="src/ios/FirebasePlugin.swift" />
 
     <framework src="libz.tbd" />
     <framework src="libsqlite3.tbd" />
+    <framework src="CoreMotion.framework" />
+    <framework src="CoreTelephony.framework" />
+    <framework src="GLKit.framework" />
+    <framework src="MediaPlayer.framework" />
+    <framework src="MessageUI.framework" />
+    <framework src="SystemConfiguration.framework" />
     <framework src="libs/ios/Firebase/Analytics/FirebaseAnalytics.framework" custom="true" />
 		<framework src="libs/ios/Firebase/Analytics/FirebaseCore.framework" custom="true" />
 		<framework src="libs/ios/Firebase/Analytics/FirebaseCoreDiagnostics.framework" custom="true" />
@@ -77,6 +86,9 @@
 		<framework src="libs/ios/Firebase/Analytics/FirebaseNanoPB.framework" custom="true" />
 		<framework src="libs/ios/Firebase/Analytics/GoogleToolboxForMac.framework" custom="true" />
     <framework src="libs/ios/Firebase/Analytics/nanopb.framework" custom="true" />
+    <framework src="libs/ios/Firebase/AdMob/GoogleMobileAds.framework" custom="true" />
+    <framework src="libs/ios/Firebase/Messaging/FirebaseMessaging.framework" custom="true" />
+    <framework src="libs/ios/Firebase/Messaging/Protobuf.framework" custom="true" />
 
   </platform>
 
