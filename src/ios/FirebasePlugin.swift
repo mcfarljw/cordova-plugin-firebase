@@ -47,11 +47,11 @@ class FirebasePlugin : CDVPlugin {
     @objc(admobRequestInterstitial)
     func admobRequestInterstitial() {
         DispatchQueue.global(qos: .userInitiated).async {
+            self.admobInterstitial = GADInterstitial(adUnitID: self.admobInterstitialUnitId)
+
             let request = GADRequest()
 
             request.testDevices = admobTestDevices
-
-            self.admobInterstitial = GADInterstitial(adUnitID: self.admobInterstitialUnitId)
 
             self.admobInterstitial.load(request)
         }
